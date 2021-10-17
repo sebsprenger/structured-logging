@@ -1,0 +1,2 @@
+myApplication.name: "HelloWorld"
+spring.main.banner-mode: "off"

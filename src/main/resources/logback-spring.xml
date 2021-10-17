@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <springProfile name="!jsonlog">
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+                <charset>${CONSOLE_LOG_CHARSET}</charset>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <springProfile name="jsonlog">
+        <springProperty name="serviceName" source="myApplication.name"/>
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                <fieldNames><!-- fields can be renamed -->
+                    <timestamp>ts</timestamp>
+                </fieldNames>
+                <customFields><!-- custom fields can be added -->
+                    {"service":"${serviceName}"}
+                </customFields>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
