@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.sebsprenger</groupId>
-	<artifactId>slogging</artifactId>
+	<artifactId>structured-logging</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>slogging</name>
+	<name>structured-logging</name>
 	<description>Demonstration of structured logging</description>
 	<properties>
 		<java.version>11</java.version>
