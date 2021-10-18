@@ -39,9 +39,10 @@ This example project utilizes three different tools to create structured logs:
 
 To learn more, I recommend the excellent article https://www.innoq.com/en/blog/structured-logging/
 by [Jochen Christ](https://github.com/jochenchrist). While I agree with Jochen that Markers have an unfavorable API, I
-do not share the recommendation for structured arguments in all situations as they disturb static analyzers that analyze
-log statements (*"More arguments provided (2) than placeholders specified (0)"*). As an alternative I propose to use a
-thin abstraction layer
+want to point out, that using structured arguments in all situations may disturb static analyzers that analyze log
+statements (*"More arguments provided (2) than placeholders specified (0)"*). This might change (at least for IntelliJ
+IDEA) as Jochen filed a [bug report](https://youtrack.jetbrains.com/issue/IDEA-280562) with JetBrains. As an alternative
+I propose to use a thin abstraction layer
 like [`JsonAttributeMarker.java`](src/main/java/de/sebsprenger/structuredlogging/util/JsonAttributeMarker.java).
 
 You can find usage examples of structured arguments and markers
