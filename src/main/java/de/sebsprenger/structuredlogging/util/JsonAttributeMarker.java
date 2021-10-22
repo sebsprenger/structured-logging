@@ -15,7 +15,7 @@ public class JsonAttributeMarker extends ObjectAppendingMarker {
     public JsonAttributeMarker and(String fieldName, Object object) {
         JsonAttributeMarker result = new JsonAttributeMarker(fieldName, object);
         super.add(result);
-        return result;
+        return this;
     }
 
     public static JsonAttributeMarker put(String fieldName, Object object) {
