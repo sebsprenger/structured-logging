@@ -2,6 +2,23 @@
 
 A small example project to facilitate discussions about structured logging.
 
+## Execute
+
+Activate the Spring profile `jsonlog` to print logs in JSON format. E.g.
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=jsonlog
+```
+
+or if you do not want to use maven
+
+```bash
+SPRING_PROFILES_ACTIVE=jsonlog java -jar target/structured-logging-0.0.1-SNAPSHOT.jar 
+```
+
+If the profile `jsonlog` is not set the application logs in default Spring Boot fashion which is very human friendly,
+but you will not see attributes that only go into the JSON output.
+
 ## Logback Config
 
 Logs in JSON format can be hard to read for a human beings. Switching over to "classic" logs can be very beneficial when
